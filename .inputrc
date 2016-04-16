@@ -1,0 +1,11 @@
+set expand-tilde on
+TAB: menu-complete
+#disable arrow keys
+"\eOD":""
+"\e[D":""
+"\eOC":""
+"\e[C":""
+"\eOA":""
+"\e[A":""
+"\eOB":""
+"\e[B":""
