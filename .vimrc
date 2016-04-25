@@ -2,4 +2,10 @@
 :imap <C-g> <Esc> " Change ctrl-g to exit insert mode
 set number " Show current line number
 set relativenumber " Show relative line numbers
-set nohlsearch " Disable search highlighting
+set  hlsearch off " Disable search highlighting
+set incsearch on " Enable incremental search
+" Quick navigation
+nmap <c-j> 10j
+nmap <c-k> 10k
+nmap <c-h> 10h
+nmap <c-l> 10l
