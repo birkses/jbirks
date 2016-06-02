@@ -15,3 +15,5 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" change _ to word
+set iskeyword-=_
