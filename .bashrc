@@ -7,7 +7,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias ls="ls -aFG"
+alias ls="ls -aFG --color=auto"
 alias gs="git status"
 alias gd='git diff'
 alias gl='git log --graph --decorate --oneline'
