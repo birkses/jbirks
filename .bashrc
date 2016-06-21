@@ -9,7 +9,6 @@ fi
 # User specific aliases and functions
 alias ls="ls -ahFG --color=auto"
 alias ga="git add -A"
-alias gc="git commit -m"
 alias gs="git status"
 alias gd='git diff'
 alias gl='git log --graph --decorate --oneline'
