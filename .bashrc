@@ -10,6 +10,7 @@ fi
 alias ls="ls -ahFG --color=auto"
 alias ga="git add -A"
 alias gs="git status"
+alias gc="git commit"
 alias gd='git diff'
 alias gl='git log --graph --decorate --oneline'
 alias grep="grep --color=auto"
