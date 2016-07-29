@@ -19,4 +19,18 @@ alias m="make"
 alias mp="make package"
 alias mi="make install"
 alias mc="make clean"
+alias fuck="sudo $(history -p \!\!)"
+
+# Journalctl aliases
+alias log=journalctl
+alias spy='journalctl -f'
+
+# Systemctl aliases
+alias reload='systemctl reload'
+alias restart='systemctl restart'
+alias start='systemctl start'
+alias sctl='systemctl'
+alias status='systemctl -l status'
+alias stop='systemctl stop'
+
 setxkbmap -layout us -option ctrl:nocaps
