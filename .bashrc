@@ -15,6 +15,7 @@ alias gd='git diff'
 alias gl='git log --graph --decorate --oneline'
 alias grep="grep --color=auto"
 alias ll="ls -lah"
+alias mv="mv -i"
 alias m="make"
 alias mp="make package"
 alias mi="make install"
