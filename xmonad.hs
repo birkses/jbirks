@@ -4,9 +4,12 @@
     --
 
     import XMonad
+    import XMonad.Hooks.EwmhDesktops
 
-    main = xmonad $ defaultConfig
+
+    main = xmonad $ ewmh defaultConfig
         { borderWidth        = 4
+        , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , modMask            = mod4Mask
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
