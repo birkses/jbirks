@@ -5,6 +5,7 @@
 
     import XMonad
     import XMonad.Hooks.EwmhDesktops
+    import XMonad.Util.EZConfig
 
 
     main = xmonad $ ewmh defaultConfig
@@ -15,3 +16,7 @@
         , focusFollowsMouse  = False
         , normalBorderColor  = "#cd8b00" 
         , focusedBorderColor = "#FF0000" }
+        `additionalKeys`
+        [ ((mod4Mask, xK_f), spawn "firefox")
+        ]
+        -- todo change capslock to modmask
