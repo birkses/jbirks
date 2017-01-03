@@ -6,12 +6,14 @@
     import XMonad
     import XMonad.Hooks.EwmhDesktops
     import XMonad.Util.EZConfig
+    import XMonad.Hooks.SetWMName
 
 
     main = xmonad $ ewmh defaultConfig
         { borderWidth        = 4
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , modMask            = mod4Mask
+        , startupHook = setWMName "LG3D"
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
         , normalBorderColor  = "#cd8b00" 
