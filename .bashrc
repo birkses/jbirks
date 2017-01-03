@@ -22,6 +22,8 @@ alias m="make"
 alias mp="make package"
 alias mi="make install"
 alias mc="make clean"
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
+alias open="xdg-open"
 
 # Journalctl aliases
 alias log=journalctl
