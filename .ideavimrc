@@ -1,0 +1,4 @@
+nnoremap <C-g> <Esc>
+vnoremap <C-g> <Esc>gV
+onoremap <C-g> <Esc>
+inoremap <C-g> <Esc>`^
