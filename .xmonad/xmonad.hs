@@ -13,7 +13,11 @@
         { borderWidth        = 4
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , modMask            = mod4Mask
-        , startupHook = setWMName "LG3D"
+        , startupHook = do
+            setWMName "LG3D"
+            spawnOn "workspace0" "htop"
+            spawnOn "workspace0" "screenfetch"
+            spawnOn "workspace0" "profanity"
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
         , normalBorderColor  = "#cd8b00" 
