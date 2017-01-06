@@ -16,9 +16,9 @@
         , modMask            = mod4Mask
         , startupHook = do
             setWMName "LG3D"
-            spawnOn "workspace0" "htop"
-            spawnOn "workspace0" "screenfetch"
-            spawnOn "workspace0" "profanity"
+            spawnOn "workspace0" "urxvt -e htop"
+            spawnOn "workspace0" "urxvt -e screenfetch"
+            spawnOn "workspace0" "urxvt -e profanity"
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
         , normalBorderColor  = "#cd8b00" 
