@@ -1,4 +1,3 @@
-nnoremap s i_<Esc>r " Change space to insert one character
 nnoremap <C-g> <Esc>
 vnoremap <C-g> <Esc>gV
 onoremap <C-g> <Esc>
