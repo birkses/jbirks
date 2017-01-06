@@ -7,6 +7,7 @@
     import XMonad.Hooks.EwmhDesktops
     import XMonad.Util.EZConfig
     import XMonad.Hooks.SetWMName
+    import XMonad.Actions.SpawnOn
 
 
     main = xmonad $ ewmh defaultConfig
