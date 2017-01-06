@@ -8,6 +8,8 @@ fi
 
 # User specific aliases and functions
 alias ls="ls -ahFG --color=auto"
+alias python='python3'
+# alias pycharm=/home/jordan/Downloads/pycharm-community-2016.3.2/bin/pycharm.sh
 alias ga="git add -A"
 alias gs="git status"
 alias gc="git commit"
