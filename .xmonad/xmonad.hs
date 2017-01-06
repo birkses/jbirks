@@ -8,6 +8,7 @@
     import XMonad.Util.EZConfig
     import XMonad.Hooks.SetWMName
     import XMonad.Actions.SpawnOn
+    import XMonad.Layout.Spacing
 
 
     main = xmonad $ ewmh defaultConfig
@@ -17,7 +18,7 @@
         , startupHook = do
             setWMName "LG3D"
             spawnOn "workspace0" "urxvt -e htop"
-            spawnOn "workspace0" "urxvt -e screenfetch"
+            spawnOn "workspace0" "urxvt -hold -e screenfetch"
             spawnOn "workspace0" "urxvt -e profanity"
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
