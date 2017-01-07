@@ -7,6 +7,8 @@ set relativenumber " Show relative line numbers
 set hlsearch off " Disable search highlighting
 set incsearch on " Enable incremental search
 set ts=4 sw=4 " Make tabs 4 spaces
+set mouse=a
+syntax on
 set smartindent
 set tabstop=4
 set shiftwidth=4
