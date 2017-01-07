@@ -19,7 +19,7 @@
             setWMName "LG3D"
             spawnOn "workspace0" "urxvt -e htop"
             spawnOn "workspace0" "urxvt -hold -e screenfetch"
-            spawnOn "workspace0" "urxvt -e profanity"
+            spawnOn "workspace0" "urxvt -e irssi"
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
         , normalBorderColor  = "#cd8b00" 
