@@ -27,6 +27,7 @@
         `additionalKeys`
         [ ((mod4Mask, xK_f), spawn "firefox"),
           ((mod4Mask, xK_g), spawn "google-chrome"),
+          ((mod4Mask .|. shiftMask, xK_l), spawn "xlock -mode blank -geometry 1x1-1-1"),
           ((mod4Mask, xK_i), spawn "/home/jordan/Downloads/pycharm-community-2016.3.2/bin/pycharm.sh")
         ]
         -- todo change capslock to modmask??
