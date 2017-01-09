@@ -20,11 +20,9 @@
             spawnOn "workspace0" "urxvt -e htop"
             spawnOn "workspace0" "urxvt -hold -e screenfetch"
             spawnOn "workspace0" "urxvt -e irssi"            
-            spawnOn "workspace0" "urxvt -e w3m www.google.com.au"
-            spawnOn "workspace0" "urxvt -e bash -c 'while true; do tput clear; date +\"%H : %M : %S\" | figlet -ct ; sleep 1; done'"       
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
-        , normalBorderColor  = "#cd8b00" 
+        , normalBorderColor  = "#1d8b00" 
         , focusedBorderColor = "#FF0000" }
         `additionalKeys`
         [ ((mod4Mask, xK_f), spawn "firefox"),
