@@ -15,6 +15,7 @@
         { borderWidth        = 4
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , modMask            = mod4Mask
+        , layoutHook  = spacing 5 $ Tall 1 (3/100) (1/2)
         , startupHook = do
             setWMName "LG3D"
             spawnOn "workspace0" "urxvt -e htop"
