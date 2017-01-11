@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cp .bashrc ~/
-cp .vimrc ~/
-cp .Xdefaults ~/
-cp .xmonad/xmonad.hs ~/.xmonad/xmonad.hs
+cp -i .bashrc ~/
+cp -i .vimrc ~/
+cp -i .Xdefaults ~/
+cp -i .xmonad/xmonad.hs ~/.xmonad/xmonad.hs
