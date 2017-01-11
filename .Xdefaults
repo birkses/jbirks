@@ -23,6 +23,7 @@ urxvt.pointerColor2:    white
 
 URxvt.font:     xft:bitstream vera sans mono:size=12:antialias=true
 URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true
+URxvt.letterSpace: -1
 
 URxvt*foreground:   #B2B2B2
 URxvt*cursorColor:  #FFFFFF
