@@ -20,10 +20,8 @@ urxvt.pointerColor:     black
 urxvt.pointerColor2:    white
 
 !urxvt font settings
-
-URxvt.font:     xft:bitstream vera sans mono:size=12:antialias=true
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true
-URxvt.letterSpace: -1
+URxvt.font: xft:bitstream vera sans mono:size=13:antialias=true
+URxvt.letterSpace: -2
 
 URxvt*foreground:   #B2B2B2
 URxvt*cursorColor:  #FFFFFF
