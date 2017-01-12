@@ -1,0 +1,35 @@
+# User specific aliases and functions
+alias ls="ls -ahFG --color=auto"
+alias python='python3'
+# alias pycharm=/home/jordan/Downloads/pycharm-community-2016.3.2/bin/pycharm.sh
+alias ga="git add -A"
+alias gs="git status"
+alias gc="git commit"
+alias gd='git diff'
+alias gl='git log --graph --decorate --oneline'
+alias grep="grep --color=auto"
+alias ll="ls -lah"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias m="make"
+alias mp="make package"
+alias mi="make install"
+alias mc="make clean"
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
+alias open="xdg-open"
+alias vi=vimx
+alias rm=trash
+# alias pycharm="pycharmdirhere"
+
+# Journalctl aliases
+alias log=journalctl
+alias spy='journalctl -f'
+
+# Systemctl aliases
+alias reload='systemctl reload'
+alias restart='systemctl restart'
+alias start='systemctl start'
+alias sctl='systemctl'
+alias status='systemctl -l status'
+alias stop='systemctl stop'
