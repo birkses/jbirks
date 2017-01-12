@@ -8,7 +8,7 @@ URxvt*termName:         rxvt-unicode
 
 urxvt*dynamicColors:    on
 urxvt.background:       black
-urxvt.foreground:       white
+urxvt.foreground:       #8fd4cb
 urxvt.scrollBar:        false
 urxvt.tintColor:        white
 urxvt.fading:           15
@@ -22,9 +22,8 @@ urxvt.pointerColor2:    white
 !urxvt font settings
 URxvt.font: xft:bitstream vera sans mono:size=13:antialias=true
 URxvt.letterSpace: -2
-
-URxvt*foreground:   #B2B2B2
 URxvt*cursorColor:  #FFFFFF
+
 
 URxvt*color0:       #303030
 URxvt*color1:       #E1321A
