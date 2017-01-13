@@ -14,3 +14,6 @@ set expandtab
 cmap w!! w !sudo tee > /dev/null %
 noremap <Leader>y "+y
 noremap <Leader>p "+p
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
