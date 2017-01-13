@@ -19,7 +19,7 @@
         , startupHook = do
             setWMName "LG3D"
             spawnOn "workspace0" "urxvt -e htop"
-            spawnOn "workspace0" "urxvt -e irssi"            
+            spawnOn "workspace0" "urxvt -e profanity"            
             spawnOn "workspace0" "urxvt -e tty-clock -sxc -C 6"            
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
