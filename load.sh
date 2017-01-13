@@ -6,4 +6,5 @@ cp -i .xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 cp -i .bash_profile ~/
 cp -i .aliases ~/
 cp -i .zprofile ~/
+cp -i .ideavimrc ~/
 git config --global help.autocorrect 5
