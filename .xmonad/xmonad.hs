@@ -19,11 +19,11 @@
         , startupHook = do
             setWMName "LG3D"
             spawnOn "workspace0" "urxvt -e htop"
-            spawnOn "workspace0" "urxvt -hold -e screenfetch"
             spawnOn "workspace0" "urxvt -e irssi"            
+            spawnOn "workspace0" "urxvt -e tty-clock -sxc -C 6"            
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
-        , normalBorderColor  = "#1d8b00" 
+        , normalBorderColor  = "#F2F2F2" 
         , focusedBorderColor = "#FF0000" }
         `additionalKeys`
         [ ((mod4Mask, xK_f), spawn "firefox"),
