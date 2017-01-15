@@ -14,7 +14,7 @@ urxvt.tintColor:        white
 urxvt.fading:           15
 urxvt.depth:            32
 urxvt.fadeColor:        black
-urxvt.shading:          35
+urxvt.shading:          15
 urxvt.inheritPixmap:    true
 urxvt.pointerColor:     black
 urxvt.pointerColor2:    white

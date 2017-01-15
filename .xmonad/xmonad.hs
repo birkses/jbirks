@@ -14,7 +14,7 @@
     myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 
     main = xmonad $ ewmh defaultConfig
-        { borderWidth        = 4
+        { borderWidth        = 2
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , workspaces         = myWorkspaces
         , modMask            = mod4Mask
