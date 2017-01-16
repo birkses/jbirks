@@ -9,6 +9,7 @@
     import XMonad.Hooks.SetWMName
     import XMonad.Actions.SpawnOn
     import XMonad.Layout.Spacing
+    import XMonad.Layout.NoBorders
     import qualified XMonad.StackSet as W
 
     myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
@@ -18,16 +19,15 @@
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , workspaces         = myWorkspaces
         , modMask            = mod4Mask
-        , layoutHook  = spacing 5 $ Tall 1 (3/100) (1/2)
+        , layoutHook  = noBorders $ spacing 6 $ Tall 1 (3/100) (1/2)
+        , terminal           = "urxvt"
+        , focusFollowsMouse  = False
+        , focusedBorderColor = "#FF0000"
         , startupHook = do
             setWMName "LG3D"
             spawnOn "workspace0" "urxvt -e htop"
             spawnOn "workspace0" "urxvt -e profanity"
             spawnOn "workspace0" "urxvt -e tty-clock -sxc -C 6"
-        , terminal           = "urxvt"
-        , focusFollowsMouse  = False
-        , normalBorderColor  = "#F2F2F2"
-        , focusedBorderColor = "#FF0000"
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), spawn "firefox"),
           ((mod4Mask, xK_g), spawn "google-chrome"),
