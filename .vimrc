@@ -4,6 +4,7 @@ onoremap <C-g> <Esc>
 inoremap <C-g> <Esc>`^
 let mapleader=","
 let g:jedi#use_splits_not_buffers = "top"
+let g:jedi#show_call_signatures = "1"
 set number " Show current line number
 set relativenumber " Show relative line numbers
 set ts=4 sw=4 " Make tabs 4 spaces
