@@ -18,6 +18,7 @@
         { borderWidth        = 2
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , workspaces         = myWorkspaces
+        , manageHook = manageSpawn <+> manageHook def
         , modMask            = mod4Mask
         , layoutHook  = noBorders $ spacing 6 $ Tall 1 (3/100) (1/2)
         , terminal           = "urxvt"
@@ -25,9 +26,12 @@
         , focusedBorderColor = "#FF0000"
         , startupHook = do
             setWMName "LG3D"
-            spawnOn "workspace0" "urxvt -e htop"
-            spawnOn "workspace0" "urxvt -e profanity"
-            spawnOn "workspace0" "urxvt -e tty-clock -sxc -C 6"
+            spawnOn "1" "urxvt -e htop"
+            spawnOn "1" "urxvt -e profanity"
+            spawnOn "1" "urxvt -e tty-clock -sxc -C 6"
+            spawnOn "3" "urxvt -e htop"
+            spawnOn "3" "urxvt -e profanity"
+            spawnOn "3" "urxvt -e tty-clock -sxc -C 6"
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), spawn "firefox"),
           ((mod4Mask, xK_g), spawn "google-chrome"),
