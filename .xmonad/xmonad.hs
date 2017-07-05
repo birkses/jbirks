@@ -29,9 +29,8 @@
             spawnOn "1" "urxvt -e htop"
             spawnOn "1" "urxvt -e profanity"
             spawnOn "1" "urxvt -e tty-clock -sxc -C 6"
-            spawnOn "3" "urxvt -e htop"
-            spawnOn "3" "urxvt -e profanity"
-            spawnOn "3" "urxvt -e tty-clock -sxc -C 6"
+            spawnOn "3" "urxvt -e glances"
+            spawnOn "3" "urxvt -e  sh -c 'echo \"di\" | bmon -p wlp3s0*'"
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), spawn "firefox"),
           ((mod4Mask, xK_g), spawn "google-chrome"),
