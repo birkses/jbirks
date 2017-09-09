@@ -19,14 +19,14 @@ alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "stat
 alias open="xdg-open"
 alias vi=vimx
 alias rm=trash
+alias chromium-browser="chromium-browser --remote-debugging-port=9222 --user-data-dir=remote-profile"
 # alias pycharm="pycharmdirhere"
 
 # Journalctl aliases
-alias log=journalctl
-alias spy='journalctl -f'
+alias log='journalctl -fu'
+alias spy='journalctl -ru'
 
 # Systemctl aliases
-alias reload='systemctl reload'
 alias restart='systemctl restart'
 alias start='systemctl start'
 alias sctl='systemctl'
