@@ -4,6 +4,7 @@
     --
 
     import XMonad
+    import XMonad.Config.Gnome
     import XMonad.Hooks.EwmhDesktops
     import XMonad.Util.EZConfig
     import XMonad.Hooks.SetWMName
@@ -14,7 +15,7 @@
 
     myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 
-    main = xmonad $ ewmh defaultConfig
+    main = xmonad $ ewmh gnomeConfig
         { borderWidth        = 2
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , workspaces         = myWorkspaces
