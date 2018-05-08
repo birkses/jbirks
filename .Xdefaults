@@ -1,5 +1,5 @@
-urxvt.font: xft:DejaVu Sans Mono-9:book:autohint=true:hinting=true
-urxvt.boldFont: xft:DejaVu Sans Mono-9:book:autohint=true:hinting=true
+urxvt.font: xft:DejaVu Sans Mono-13:book:autohint=true:hinting=true
+urxvt.boldFont: xft:DejaVu Sans Mono-13:book:autohint=true:hinting=true
 URxvt*geometry:         53x20
 URxvt*borderless:       1
 URxvt*scrollBar:        false
