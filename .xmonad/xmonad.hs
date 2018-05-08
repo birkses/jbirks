@@ -27,13 +27,12 @@
         , focusedBorderColor = "#FF0000"
         , startupHook = do
             setWMName "LG3D"
-            spawnOn "1" "urxvt -e htop"
-            spawnOn "1" "urxvt -e profanity"
-            spawnOn "1" "urxvt -e tty-clock -sxc -C 6"
-            spawnOn "3" "urxvt -e glances"
-            spawnOn "3" "urxvt -e  sh -c 'echo \"di\" | bmon -p wlp3s0*'"
+            spawnOn "1" "urxvt -e glances"
+            spawnOn "1" "urxvt -e  sh -c 'echo \"di\" | bmon -p wlp3s0*'"
+            spawnOn "2" "bash -c 'http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser'"
+            spawnOn "3" "urxvt -e ranger"
         } `additionalKeys` ( [
-          ((mod4Mask, xK_f), spawn "firefox"),
+          ((mod4Mask, xK_f), spawn "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser"),
           ((mod4Mask, xK_g), spawn "google-chrome"),
           ((mod4Mask .|. shiftMask, xK_l), spawn "xlock -mode grav -geometry 1x1-1-1")
         ]
@@ -42,3 +41,4 @@
              | (i, k) <- zip myWorkspaces [xK_1 .. xK_9]
              , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
         )
+
