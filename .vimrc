@@ -8,7 +8,11 @@ let g:jedi#show_call_signatures = "1"
 set number " Show current line number
 set relativenumber " Show relative line numbers
 set ts=4 sw=4 " Make tabs 4 spaces
-syntax on
+" enter the current millenium
+set nocompatible
+" enable syntax and plugins (for netrw)
+syntax enable
+filetype plugin on
 set incsearch
 set smartindent
 set tabstop=4
