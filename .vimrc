@@ -21,6 +21,8 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" Display all matching files when we tab complete
+set wildmenu
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 cmap d!! w !diff % -
