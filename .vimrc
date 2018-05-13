@@ -9,6 +9,7 @@ set number " Show current line number
 set relativenumber " Show relative line numbers
 set ts=4 sw=4 " Make tabs 4 spaces
 syntax on
+set incsearch
 set smartindent
 set tabstop=4
 set shiftwidth=4
