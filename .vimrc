@@ -28,6 +28,18 @@ cmap w!! w !sudo tee > /dev/null %
 cmap d!! w !diff % -
 noremap <Leader>y "+y
 noremap <Leader>p "+p
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+nnoremap Y y$
+
+function! CleverTab()
+   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+   else
+      return "\<C-N>"
+   endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
+
 
