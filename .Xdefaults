@@ -7,7 +7,7 @@ URxvt*termName:         rxvt-unicode
 
 urxvt*dynamicColors:    on
 urxvt.background:       black
-urxvt.foreground:       #ffcd5d
+urxvt.foreground:       #ffde95
 urxvt.scrollBar:        false
 urxvt.tintColor:        white
 urxvt.fading:           15
