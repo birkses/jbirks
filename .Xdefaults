@@ -1,14 +1,13 @@
 urxvt.font: xft:DejaVu Sans Mono-13:book:autohint=true:hinting=true
 urxvt.boldFont: xft:DejaVu Sans Mono-13:book:autohint=true:hinting=true
 URxvt*geometry:         53x20
-URxvt*borderless:       1
 URxvt*scrollBar:        false
 URxvt*saveLines:        30000
 URxvt*termName:         rxvt-unicode
 
 urxvt*dynamicColors:    on
 urxvt.background:       black
-urxvt.foreground:       #F2F2F2
+urxvt.foreground:       #ffcd5d
 urxvt.scrollBar:        false
 urxvt.tintColor:        white
 urxvt.fading:           15
@@ -36,7 +35,7 @@ URxvt*cursorColor:  #FFFFFF
 *color10: #88aa22
 !brown/yellow
 *color3: #B88B10
-*color11: #FFC135
+*color11: #FF8C00
 !blue
 *color4: #5485a4
 *color12: #85A8C0
