@@ -11,3 +11,4 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
 setxkbmap -layout us -option ctrl:nocaps
+stty -ixon
