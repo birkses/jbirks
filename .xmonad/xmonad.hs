@@ -23,8 +23,8 @@
         , layoutHook  = spacing 6 $ Tall 1 (3/100) (1/2)
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
-        , normalBorderColor  = "#FF8C00"
-        , focusedBorderColor = "#FF8C00"
+        , normalBorderColor  = "#FFDE95"
+        , focusedBorderColor = "#FFDE95"
         , startupHook = do
             setWMName "LG3D"
             spawnOn "1" "urxvt -e glances"
