@@ -10,21 +10,21 @@
     import XMonad.Hooks.SetWMName
     import XMonad.Actions.SpawnOn
     import XMonad.Layout.Spacing
-    import XMonad.Layout.NoBorders
     import qualified XMonad.StackSet as W
 
     myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 
     main = xmonad $ ewmh gnomeConfig
-        { borderWidth        = 2
+        { borderWidth        = 3
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , workspaces         = myWorkspaces
         , manageHook = manageSpawn <+> manageHook def
         , modMask            = mod4Mask
-        , layoutHook  = noBorders $ spacing 6 $ Tall 1 (3/100) (1/2)
+        , layoutHook  = spacing 6 $ Tall 1 (3/100) (1/2)
         , terminal           = "urxvt"
         , focusFollowsMouse  = False
-        , focusedBorderColor = "#FF0000"
+        , normalBorderColor  = "#FF8C00"
+        , focusedBorderColor = "#FF8C00"
         , startupHook = do
             setWMName "LG3D"
             spawnOn "1" "urxvt -e glances"
