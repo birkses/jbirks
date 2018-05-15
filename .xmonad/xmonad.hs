@@ -29,8 +29,8 @@
         , modMask            = mod4Mask
         , layoutHook  = myLayout
         , terminal           = "urxvt"
-        , normalBorderColor  = "#FFDE95"
-        , focusedBorderColor = "#7F7F4A"
+        , normalBorderColor  = "#7F7F4A"
+        , focusedBorderColor = "#FFDE95"
         , focusFollowsMouse  = False
         , startupHook = do
             setWMName "LG3D"
