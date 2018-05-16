@@ -22,25 +22,17 @@
            , fracIncrement = 0.05
            , draggerType = FixedDragger 10 10
            }
-    -- scratchpad dimentions
-    manageScratchPad :: ManageHook
-    manageScratchPad = scratchpadManageHook (W.RationalRect l t w h)
-      where
-        h = 0.5     -- terminal height, 50%
-        w = 0.5       -- terminal width, 50%
-        t = 1 - h   -- distance from top edge, 90%
-        l = 1 - w   -- distance from left edge, 0%
 
     main = xmonad $ ewmh gnomeConfig
         { borderWidth        = 3
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , workspaces         = myWorkspaces
-        , manageHook = manageSpawn <+> manageHook def <+> manageScratchPad
+        , manageHook = manageSpawn <+> manageHook def <+> scratchpadManageHook (W.RationalRect 0.125 0.125 0.75 0.75)
         , modMask            = mod4Mask
         , layoutHook  = myLayout
         , terminal           = myTerminal
-        , normalBorderColor  = "#7F7F4A"
-        , focusedBorderColor = "#FFDE95"
+        , normalBorderColor  = "#FFDE95"
+        , focusedBorderColor = "#FF9900"
         , focusFollowsMouse  = False
         , startupHook = do
             setWMName "LG3D"
@@ -51,6 +43,7 @@
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), spawn "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser"),
           ((mod4Mask, xK_g), scratchpadSpawnActionTerminal myTerminal)
+          -- ((mod4Mask, xK_n), scratchpadSpawnActionCustom "tty-clock")
         ]
         ++
         [((m .|. mod4Mask, k), windows $ f i)
