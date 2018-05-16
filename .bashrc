@@ -7,11 +7,21 @@ fi
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+
+# Disable CTRL-S on terminal
+stty -ixon
+
+# Fancy colors
 export PS1="[\[\e[01;33m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\]]$ \[\e[0m\]"
+
+# Disable caps lock
 setxkbmap -layout us -option ctrl:nocaps
 
+# Set vim as default editor for readline
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# https://xkcd.com/1168/
 extract () {
    if [ -f $1 ] ; then
        case $1 in
