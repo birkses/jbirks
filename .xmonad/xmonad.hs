@@ -18,14 +18,16 @@
     import qualified XMonad.StackSet as W
 
     myTerminal = "urxvtc"
-    myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
-    myLayout = gaps [(U,10), (D,10), (L,10), (R,10)] $ mouseResizableTile
-           { masterFrac       = 1/2
-           , fracIncrement    = 0.05
-           , draggerType      = FixedDragger 10 10 }
+    myWorkspaces = [ "1","2","3","4","5","6","7","8","9" ]
+    myBorder = gaps [ (U,10), (D,10), (L,10), (R,10) ]
+    mainLayout = myBorder $ mouseResizableTile
+        { masterFrac       = 1/2
+        , fracIncrement    = 0.05
+        , draggerType      = FixedDragger 10 10 }
+    myLayout = mainLayout ||| (myBorder $ Full)
     myScratchpads =
-        [   (NS "qutebrowser" "qutebrowser --basedir /home/jbirks/.config/qtscratch --qt-arg name scratchqt" (appName =? "scratchqt") defaultFloating)
-        ,   (NS "tty-clock" "urxvtc -e tty-clock" (title =? "tty-clock") defaultFloating) ]
+        [ (NS "qutebrowser" "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser --basedir /home/jbirks/.config/qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") defaultFloating)
+        , (NS "tty-clock" "urxvtc -e tty-clock" (title =? "tty-clock") defaultFloating) ]
     myManageHook = composeAll
         [ appName =? "scratchqt" --> doFloat ]
 
@@ -52,10 +54,10 @@
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), spawn "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser"),
           ((mod4Mask, xK_g), namedScratchpadAction myScratchpads "qutebrowser"),
-          ((mod4Mask, xK_c), scratchpadSpawnActionTerminal myTerminal)
+          ((mod4Mask, xK_n), scratchpadSpawnActionTerminal myTerminal)
         ]
         ++
         [ ((m .|. mod4Mask, k), windows $ f i)
           | (i, k) <- zip myWorkspaces [xK_1 .. xK_9]
           , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
-        ])
+        ] )
