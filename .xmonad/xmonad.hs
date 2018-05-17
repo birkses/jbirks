@@ -24,14 +24,17 @@
            , fracIncrement    = 0.05
            , draggerType      = FixedDragger 10 10 }
     myScratchpads =
-        [   (NS "qutebrowser" "chromium-browser" (title =? "qutebrowser") defaultFloating)
+        [   (NS "qutebrowser" "qutebrowser --basedir /home/jbirks/.config/qtscratch --qt-arg name scratchqt" (appName =? "scratchqt") defaultFloating)
         ,   (NS "tty-clock" "urxvtc -e tty-clock" (title =? "tty-clock") defaultFloating) ]
+    myManageHook = composeAll
+        [ appName =? "scratchqt" --> doFloat ]
 
     main = xmonad $ ewmh gnomeConfig
         { borderWidth        = 3
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , workspaces         = myWorkspaces
-        , manageHook         = manageSpawn
+        , manageHook         = myManageHook
+                             <+> manageSpawn
                              <+> manageHook def
                              <+> scratchpadManageHook (W.RationalRect 0.125 0.125 0.75 0.75)
         , modMask            = mod4Mask
@@ -48,9 +51,8 @@
             spawnOn "1" "bash -c 'cd /home/jbirks/work/msm2/governor/src/json_schemas; urxvtc -e ranger'"
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), spawn "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser"),
-          --((mod4Mask, xK_n), namedScratchpadAction myScratchpads "tty-clock"),
-          --((mod4Mask, xK_g), namedScratchpadAction myScratchpads "qutebrowser")
-          ((mod4Mask, xK_g), scratchpadSpawnActionTerminal myTerminal)
+          ((mod4Mask, xK_g), namedScratchpadAction myScratchpads "qutebrowser"),
+          ((mod4Mask, xK_c), scratchpadSpawnActionTerminal myTerminal)
         ]
         ++
         [ ((m .|. mod4Mask, k), windows $ f i)
