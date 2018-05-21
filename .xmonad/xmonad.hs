@@ -11,6 +11,7 @@
     import XMonad.Hooks.EwmhDesktops
     import XMonad.Hooks.SetWMName
     import XMonad.Layout.Gaps
+    import XMonad.Layout.NoBorders
     import XMonad.Layout.MouseResizableTile
     import XMonad.Layout.Spacing
     import XMonad.Util.EZConfig
@@ -24,7 +25,7 @@
         { masterFrac       = 1/2
         , fracIncrement    = 0.05
         , draggerType      = FixedDragger 10 10 }
-    myLayout = mainLayout ||| Full
+    myLayout = mainLayout ||| noBorders Full
     myScratchpads =
         [ (NS "qutebrowser" "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser --basedir /home/jbirks/.config/qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") defaultFloating)
         , (NS "tty-clock" "urxvtc -e tty-clock" (title =? "tty-clock") defaultFloating) ]
@@ -48,13 +49,14 @@
         , startupHook = do
             setWMName "LG3D"
             spawnOn "3" "urxvtc -e htop"
+            spawnOn "3" "pidgin"
             spawnOn "3" "urxvtc -e  sh -c 'echo \"di\" | bmon -p wlp3s0*'"
             spawnOn "2" "bash -c 'http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser'"
             spawnOn "1" "bash -c 'cd /home/jbirks/work/msm2/governor/src/json_schemas; urxvtc -e ranger'"
         } `additionalKeys` ( [
-          ((mod4Mask, xK_b), spawn "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser"),
+          ((mod4Mask, xK_g), spawn "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser"),
           ((mod4Mask, xK_f), namedScratchpadAction myScratchpads "qutebrowser"),
-          ((mod4Mask, xK_g), scratchpadSpawnActionTerminal myTerminal)
+          ((mod4Mask, xK_d), scratchpadSpawnActionTerminal myTerminal)
         ]
         ++
         [ ((m .|. mod4Mask, k), windows $ f i)
