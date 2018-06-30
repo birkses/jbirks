@@ -22,10 +22,10 @@
 
     myTerminal = "urxvtc"
     myWorkspaces = [ "1","2","3","4","5","6","7","8","9" ]
-    myBorder = gaps [ (U,10), (D,10), (L,10), (R,10) ]
-    myLayout = mainLayout ||| Dishes 3 (1/6) ||| Grid ||| noBorders Full
+    myBorder = gaps [ (U,2), (D,2), (L,2), (R,2) ]
+    myLayout = Dishes 3 (1/6) ||| Grid ||| noBorders Full -- ||| resizeableLayout
       where
-        mainLayout = myBorder $ mouseResizableTile
+        resizeableLayout = myBorder $ mouseResizableTile
             { masterFrac       = 1/2
             , fracIncrement    = 0.05
             , draggerType      = FixedDragger 10 10 }
@@ -35,8 +35,8 @@
     myManageHook = composeAll
         [ appName =? "scratchqt" --> doFloat ]
 
-    main = xmonad $ ewmh gnomeConfig
-        { borderWidth        = 3
+    main = xmonad $ ewmh defaultConfig
+        { borderWidth        = 0
         , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
         , workspaces         = myWorkspaces
         , manageHook         = myManageHook
@@ -44,7 +44,7 @@
                              <+> manageHook def
                              <+> scratchpadManageHook (W.RationalRect 0.125 0.125 0.75 0.75)
         , modMask            = mod4Mask
-        , layoutHook         = smartBorders $ myLayout
+        , layoutHook         = smartSpacing 4 $ myLayout
         , terminal           = myTerminal
         , normalBorderColor  = "#FFDE95"
         , focusedBorderColor = "#FF9900"
@@ -54,7 +54,6 @@
             spawnOn "3" "urxvtc -e htop"
             spawnOn "3" "pidgin"
             spawnOn "3" "urxvtc -e  sh -c 'echo \"di\" | bmon -p wlp3s0*'"
-            spawnOn "2" "bash -c 'http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser'"
             spawnOn "1" "bash -c 'cd /home/jbirks/work/msm2/governor/src/json_schemas; urxvtc -e ranger'"
         } `additionalKeys` ( [
           ((mod4Mask, xK_g), spawn "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser"),

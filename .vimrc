@@ -13,7 +13,6 @@ colorscheme wal
 set splitbelow
 set splitright
 
-let mapleader=","
 set number " Show current line number
 set relativenumber " Show relative line numbers
 set ts=4 sw=4 " Make tabs 4 spaceset rulers
