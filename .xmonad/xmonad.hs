@@ -4,28 +4,31 @@
     --
 
     import XMonad
-    import XMonad.ManageHook
-    import XMonad.Util.NamedScratchpad
     import XMonad.Actions.SpawnOn
     import XMonad.Config.Gnome
     import XMonad.Hooks.EwmhDesktops
     import XMonad.Hooks.SetWMName
+    import XMonad.Layout.Dishes
     import XMonad.Layout.Gaps
-    import XMonad.Layout.NoBorders
+    import XMonad.Layout.Grid
     import XMonad.Layout.MouseResizableTile
+    import XMonad.Layout.NoBorders
     import XMonad.Layout.Spacing
+    import XMonad.ManageHook
     import XMonad.Util.EZConfig
+    import XMonad.Util.NamedScratchpad
     import XMonad.Util.Scratchpad
     import qualified XMonad.StackSet as W
 
     myTerminal = "urxvtc"
     myWorkspaces = [ "1","2","3","4","5","6","7","8","9" ]
     myBorder = gaps [ (U,10), (D,10), (L,10), (R,10) ]
-    mainLayout = myBorder $ mouseResizableTile
-        { masterFrac       = 1/2
-        , fracIncrement    = 0.05
-        , draggerType      = FixedDragger 10 10 }
-    myLayout = mainLayout ||| noBorders Full
+    myLayout = mainLayout ||| Dishes 3 (1/6) ||| Grid ||| noBorders Full
+      where
+        mainLayout = myBorder $ mouseResizableTile
+            { masterFrac       = 1/2
+            , fracIncrement    = 0.05
+            , draggerType      = FixedDragger 10 10 }
     myScratchpads =
         [ (NS "qutebrowser" "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser --basedir /home/jbirks/.config/qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") defaultFloating)
         , (NS "tty-clock" "urxvtc -e tty-clock" (title =? "tty-clock") defaultFloating) ]
@@ -41,7 +44,7 @@
                              <+> manageHook def
                              <+> scratchpadManageHook (W.RationalRect 0.125 0.125 0.75 0.75)
         , modMask            = mod4Mask
-        , layoutHook         = myLayout
+        , layoutHook         = smartBorders $ myLayout
         , terminal           = myTerminal
         , normalBorderColor  = "#FFDE95"
         , focusedBorderColor = "#FF9900"
