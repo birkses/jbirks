@@ -30,7 +30,7 @@
             , fracIncrement    = 0.05
             , draggerType      = FixedDragger 10 10 }
     myScratchpads =
-        [ (NS "qutebrowser" "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser --basedir /home/jbirks/.config/qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") defaultFloating)
+        [ (NS "qutebrowser" "http_proxy=http://10.10.10.211:31060 https_proxy=http://10.10.10.211:31060 qutebrowser --basedir ~/.config/qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") defaultFloating)
         , (NS "tty-clock" "urxvtc -e tty-clock" (title =? "tty-clock") defaultFloating) ]
     myManageHook = composeAll
         [ appName =? "scratchqt" --> doFloat ]
