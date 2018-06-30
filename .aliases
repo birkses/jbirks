@@ -17,7 +17,7 @@ alias mi="make install"
 alias mc="make clean"
 alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
 alias open="xdg-open"
-alias vi=vimx
+alias v=vim
 alias rm=trash
 alias chromium-browser="chromium-browser --remote-debugging-port=9222 --user-data-dir=remote-profile"
 # alias pycharm="pycharmdirhere"

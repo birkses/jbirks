@@ -49,3 +49,12 @@ extract () {
        echo "'$1' is not a valid file!"
    fi
 }
+
+# Get to the top of a git tree
+cdp () {
+  TEMP_PWD=`pwd`
+  while ! [ -d .git ]; do
+  cd ..
+  done
+  OLDPWD=$TEMP_PWD
+}
