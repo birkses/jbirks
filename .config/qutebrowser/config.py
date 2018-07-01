@@ -1435,7 +1435,7 @@ c.url.searchengines = {'DEFAULT': 'https://www.startpage.com/do/dsearch?query={}
 config.bind('xb', 'config-cycle statusbar.hide')
 # config.bind('xo', 'set-cmd-text -s :open -b')
 config.bind('xt', 'config-cycle tabs.show always switching')
-# config.bind('xx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always switching')
+config.bind('xx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always switching')
 # config.bind('yD', 'yank domain -s')
 # config.bind('yP', 'yank pretty-url -s')
 # config.bind('yT', 'yank title -s')

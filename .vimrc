@@ -61,6 +61,7 @@ vmap j gj
 vmap k gk
 nmap j gj
 nmap k gk
+
 " visually select the text that was last edited
 noremap gV `[v`]
 
@@ -71,3 +72,5 @@ inoremap <Leader><Space> <Esc>/<++><Enter>"_c4l
 vnoremap <Leader><Space> <Esc>/<++><Enter>"_c4l
 map <Leader><Space> <Esc>/<++><Enter>"_c4l
 inoremap ;gui <++>
+
+set clipboard=unnamedplus

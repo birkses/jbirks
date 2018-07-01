@@ -12,16 +12,11 @@ xmonad-contrib
 nvidia drivers
 gvim for clipboard
 
-
 systemctl start dhcpd
 systemctl enable dhcpd
 
 systemctl start ntpd
 systemctl enable ntpd
-
-qutebrowser symlinks
-
-
 
 systemctl --user daemon-reload
 systemctl enable redshift --user
