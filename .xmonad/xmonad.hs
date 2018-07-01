@@ -31,7 +31,7 @@
             , draggerType      = FixedDragger 6 6 }
     myScratchpads =
         [ (NS "qutebrowser" "qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") defaultFloating)
-        , (NS "tty-clock" "urxvtc -e tty-clock" (title =? "tty-clock") defaultFloating) ]
+        , (NS "tty-clock" "urxvtc -e tty-clock" (title =? "tty-clock") nonFloating) ]
     myManageHook = composeAll
         [ appName =? "scratchqt" --> doFloat ]
 
