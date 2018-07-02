@@ -53,7 +53,6 @@
         , startupHook = do
             setWMName "LG3D"
             spawnOn "3" "urxvtc -e htop"
-            spawnOn "3" "pidgin"
             spawnOn "3" "urxvtc -e  sh -c 'echo \"di\" | bmon -p wlp3s0*'"
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), namedScratchpadAction myScratchpads "qutebrowser"),
