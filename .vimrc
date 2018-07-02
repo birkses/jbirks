@@ -1,5 +1,10 @@
 " Plugins will be downloaded under the specified directory.
-call plug#begin('~/.vim/plugged')
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
 Plug 'dylanaraps/wal.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-rsi'
@@ -7,7 +12,7 @@ Plug 'unblevable/quick-scope'
 Plug 'machakann/vim-sandwich'
 call plug#end()
 
-colorscheme wal
+" colorscheme wal
 
 " splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 set splitbelow
