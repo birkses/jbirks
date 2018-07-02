@@ -30,8 +30,9 @@
             , fracIncrement    = 0.05
             , draggerType      = FixedDragger 6 6 }
     myScratchpads =
-        [ (NS "qutebrowser" "qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") defaultFloating)
-        , (NS "tty-clock" "urxvtc -e tty-clock" (title =? "tty-clock") nonFloating) ]
+        [ (NS "qutebrowser" "qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") nonFloating)
+        , (NS "tty-clock" "urxvtc -e tty-clock -cxB -C 7" (title =? "tty-clock") defaultFloating) ]
+
     myManageHook = composeAll
         [ appName =? "scratchqt" --> doFloat ]
 
@@ -54,10 +55,10 @@
             spawnOn "3" "urxvtc -e htop"
             spawnOn "3" "pidgin"
             spawnOn "3" "urxvtc -e  sh -c 'echo \"di\" | bmon -p wlp3s0*'"
-            spawnOn "1" "bash -c 'cd /home/jbirks/work/msm2/governor/src/json_schemas; urxvtc -e ranger'"
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), namedScratchpadAction myScratchpads "qutebrowser"),
           ((mod4Mask, xK_d), scratchpadSpawnActionTerminal myTerminal)
+          --((mod4Mask, xK_d), scratchpadSpawnActionCustom "urxvtc -e tty-clock -cxB -C 7")
         ]
         ++
         [ ((m .|. mod4Mask, k), windows $ f i)
