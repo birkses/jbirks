@@ -31,10 +31,10 @@
             , draggerType      = FixedDragger 6 6 }
     myScratchpads =
         [ (NS "qutebrowser" "qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") nonFloating)
-        , (NS "tty-clock" "urxvtc -e tty-clock -cxB -C 7" (title =? "tty-clock") defaultFloating) ]
+        , (NS "clock" "urxvtc -e tty-clock -cxB -C 7" (title =? "tty-clock") defaultFloating) ]
 
     myManageHook = composeAll
-        [ appName =? "scratchqt" --> doFloat ]
+        [ title =? "tty-clock" --> doFloat ]
 
     main = xmonad $ ewmh defaultConfig
         { borderWidth        = 0
@@ -56,8 +56,7 @@
             spawnOn "3" "urxvtc -e  sh -c 'echo \"di\" | bmon -p wlp3s0*'"
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), namedScratchpadAction myScratchpads "qutebrowser"),
-          ((mod4Mask, xK_d), scratchpadSpawnActionTerminal myTerminal)
-          --((mod4Mask, xK_d), scratchpadSpawnActionCustom "urxvtc -e tty-clock -cxB -C 7")
+          ((mod4Mask, xK_d), namedScratchpadAction myScratchpads "clock")
         ]
         ++
         [ ((m .|. mod4Mask, k), windows $ f i)
