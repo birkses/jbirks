@@ -1,6 +1,4 @@
-sudo pacman -S zathura zathura-pdf-mupdf feh ffmpeg mpv pywal xmonad xorg-xrandr terminus-font xmonad-contrib nvidia gvim
-
-# ranger
+sudo pacman -S zathura zathura-pdf-mupdf feh ffmpeg mpv pywal xmonad xorg-xrandr terminus-font xmonad-contrib nvidia gvim ranger
 
 systemctl enable dhcpd
 systemctl start dhcpd

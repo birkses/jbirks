@@ -1,5 +1,4 @@
-URxvt.font: xft:DejaVu Sans Mono-13:book:autohint=true:hinting=true
-URxvt.boldFont: xft:DejaVu Sans Mono-13:book:autohint=true:hinting=true
+urxvt*font: xft:terminus
 URxvt*geometry:         53x20
 URxvt*scrollBar:        false
 URxvt*saveLines:        30000
@@ -19,7 +18,7 @@ URxvt.pointerColor:     black
 URxvt.pointerColor2:    white
 
 !urxvt font settings
-URxvt.letterSpace: -2
+URxvt.letterSpace: -7
 URxvt*cursorColor:  #FFFFFF
 
 !black
