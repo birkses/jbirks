@@ -23,7 +23,7 @@
     myTerminal = "urxvtc"
     myWorkspaces = [ "1","2","3","4","5","6","7","8","9" ]
     myBorder = gaps [ (U,3), (D,3), (L,3), (R,3) ]
-    myLayout = resizeableLayout ||| ( smartSpacing 3 $ (Dishes 3 (1/6) ||| Grid ||| noBorders Full) )
+    myLayout = resizeableLayout ||| ( spacing 3 $ (Dishes 3 (1/6) ||| Grid)) ||| noBorders Full
       where
         resizeableLayout = myBorder $ mouseResizableTile
             { masterFrac       = 1/2

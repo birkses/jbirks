@@ -12,7 +12,7 @@ Plug 'unblevable/quick-scope'
 Plug 'machakann/vim-sandwich'
 call plug#end()
 
-" colorscheme wal
+colorscheme wal
 
 " splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 set splitbelow
