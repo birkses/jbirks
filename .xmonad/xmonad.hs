@@ -22,13 +22,10 @@
 
     myTerminal = "urxvtc"
     myWorkspaces = [ "1","2","3","4","5","6","7","8","9" ]
-    myBorder = gaps [ (U,3), (D,3), (L,3), (R,3) ]
-    myLayout = resizeableLayout ||| ( smartSpacing 3 $ (Dishes 3 (1/6) ||| Grid ||| noBorders Full) )
+    myLayout = resizeableLayout ||| Dishes 3 (1/6) ||| Grid ||| noBorders Full
       where
-        resizeableLayout = myBorder $ mouseResizableTile
-            { masterFrac       = 1/2
-            , fracIncrement    = 0.05
-            , draggerType      = FixedDragger 6 6 }
+        resizeableLayout = mouseResizableTile
+            { draggerType = FixedDragger { gapWidth = 0, draggerWidth = 22 } }
     myScratchpads =
         [ (NS "qutebrowser" "qutebrowser --qt-arg name scratchqt" (appName =? "scratchqt") nonFloating)
         ]
@@ -41,7 +38,7 @@
                              <+> manageHook def
                              <+> scratchpadManageHook (W.RationalRect 0.125 0.125 0.75 0.75)
         , modMask            = mod4Mask
-        , layoutHook         = myLayout
+        , layoutHook         = smartSpacing 3 $ myLayout
         , terminal           = myTerminal
         , normalBorderColor  = "#FFDE95"
         , focusedBorderColor = "#FF9900"
