@@ -12,4 +12,6 @@ setxkbmap -layout us -option ctrl:nocaps
 
 # wallpaper setup
 wal -R
+compton -b -d :0
+
 exec xmonad
