@@ -1069,7 +1069,7 @@ c.editor.command = ['urxvt', '-e', 'vim', '{}']
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-# c.statusbar.hide = False
+c.statusbar.hide = True
 
 ## Padding for the statusbar.
 ## Type: Padding
@@ -1167,7 +1167,7 @@ c.editor.command = ['urxvt', '-e', 'vim', '{}']
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-# c.tabs.show = 'always'
+c.tabs.show = 'switching'
 
 ## Time to show the tab bar before hiding it when tabs.show is set to
 ## 'switching'.
