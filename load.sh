@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 cp -i .bashrc ~/
+cp -i .compton.conf ~/
 cp -i .vimrc ~/
 cp -i .inputrc ~/
 cp -i .xmonad/xmonad.hs ~/.xmonad/xmonad.hs
