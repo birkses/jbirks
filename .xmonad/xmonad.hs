@@ -7,7 +7,6 @@
     import XMonad.Actions.SpawnOn
     import XMonad.Config.Gnome
     import XMonad.Hooks.EwmhDesktops
-    import XMonad.Hooks.SetWMName
     import XMonad.Layout.Dishes
     import XMonad.Layout.Gaps
     import XMonad.Layout.Grid
@@ -20,7 +19,7 @@
     import XMonad.Util.Scratchpad
     import qualified XMonad.StackSet as W
 
-    myTerminal = "urxvtc"
+    myTerminal = "st"
     myWorkspaces = [ "1","2","3","4","5","6","7","8","9" ]
     myLayout = resizeableLayout ||| Dishes 3 (1/6) ||| Grid ||| noBorders Full
       where
@@ -40,16 +39,12 @@
         , modMask            = mod4Mask
         , layoutHook         = smartSpacing 3 $ myLayout
         , terminal           = myTerminal
-        , normalBorderColor  = "#FFDE95"
-        , focusedBorderColor = "#FF9900"
         , focusFollowsMouse  = False
         , startupHook = do
-            setWMName "LG3D"
-            spawnOn "3" "urxvtc -e htop"
-            spawnOn "3" "urxvtc -e  sh -c 'echo \"di\" | bmon -p wlp3s0*'"
+            spawnOn "2" "st htop"
         } `additionalKeys` ( [
           ((mod4Mask, xK_f), namedScratchpadAction myScratchpads "qutebrowser"),
-          ((mod4Mask, xK_d), scratchpadSpawnActionCustom "urxvtc -name scratchpad -e tty-clock -cxB -C 7")
+          ((mod4Mask, xK_d), scratchpadSpawnActionCustom "st -n scratchpad -e tty-clock -cxB -C 7")
         ]
         ++
         [ ((m .|. mod4Mask, k), windows $ f i)
