@@ -1227,7 +1227,7 @@ c.tabs.show = 'switching'
 ## The page to open if :open -t/-b/-w is used without URL. Use
 ## `about:blank` for a blank page.
 ## Type: FuzzyUrl
-# c.url.default_page = 'https://www.youtube.com/'
+c.url.default_page = 'https://www.youtube.com/'
 
 ## The URL segments where `:navigate increment/decrement` will search for
 ## a number.
@@ -1252,7 +1252,7 @@ c.url.searchengines = {'DEFAULT': 'https://www.startpage.com/do/dsearch?query={}
 
 ## The page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['https://www.youtube.com/']
 
 ## The URL parameters to strip with `:yank url`.
 ## Type: List of String
