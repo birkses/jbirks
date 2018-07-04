@@ -21,9 +21,6 @@ shopt -s histappend
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
-# Disable caps lock
-setxkbmap -layout us -option ctrl:nocaps
-
 # Set vim as default editor for readline
 export VISUAL=vim
 export EDITOR="$VISUAL"

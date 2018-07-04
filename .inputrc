@@ -1,6 +1,7 @@
 set expand-tilde on
+# fix delete in st
 set enable-keypad on
-#disable arrow keys
+# disable arrow keys
 "\eOD":""
 "\e[D":""
 "\eOC":""

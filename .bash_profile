@@ -11,8 +11,5 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
 
-# setup urxvt daemon
-urxvtd -q -f -o
-
 # start the x server
 startx
