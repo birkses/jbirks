@@ -70,9 +70,6 @@ nmap k gk
 " visually select the text that was last edited
 noremap gV `[v`]
 
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
-
 inoremap <Leader><Space> <Esc>/<++><Enter>"_c4l
 vnoremap <Leader><Space> <Esc>/<++><Enter>"_c4l
 map <Leader><Space> <Esc>/<++><Enter>"_c4l
