@@ -709,7 +709,7 @@ c.confirm_quit = ['multiple-tabs', 'downloads']
 ## The editor (and arguments) to use for the `open-editor` command. `{}`
 ## gets replaced by the filename of the file to be edited.
 ## Type: ShellCommand
-c.editor.command = ['urxvt', '-e', 'vim', '{}']
+c.editor.command = ['st', '-e', 'vim', '{}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -1167,7 +1167,7 @@ c.statusbar.hide = True
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'switching'
+c.tabs.show = 'multiple'
 
 ## Time to show the tab bar before hiding it when tabs.show is set to
 ## 'switching'.
