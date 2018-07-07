@@ -4,6 +4,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'dylanaraps/wal.vim'
 Plug 'ervandew/supertab'
@@ -14,6 +15,9 @@ Plug 'mbbill/undotree'
 Plug 'ap/vim-buftabline'
 call plug#end()
 
+set undodir=~/.vim/undodir
+set undofile
+
 colorscheme wal
 
 "only display buffer list if more than one buffer
@@ -23,13 +27,30 @@ let g:buftabline_show = 1
 set splitbelow
 set splitright
 
-set number " Show current line number
-set relativenumber " Show relative line numbers
-set ts=4 sw=4 " Make tabs 4 spaceset rulers
+" number of lines to keep above and below the cursor
+set scrolloff=5
+
+" show current line number
+set number
+
+" show relative line numbers
+set relativenumber
+
+" make tabs 4 spaceset rulers
+set ts=4 sw=4
+
+" expand tabs to spaces
 set expandtab
+
 " enter the current millenium
 set nocompatible
+
+" ignore search case
+set ignorecase
+
+" unless you use capitals
 set smartcase
+
 
 " vim-sensible tpope
 if has('autocmd')
@@ -59,8 +80,18 @@ set path+=**
 " allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 cmap d!! w !diff % -
-noremap <Leader>y "+y
-noremap <Leader>p "+p
+
+nnoremap <Leader>y "+y
+nnoremap <Leader>d "+d
+vnoremap <Leader>y "+y
+vnoremap <Leader>d "+d
+
+nnoremap <Leader>p :set paste<CR>"+p:set nopaste<CR>
+nnoremap <Leader>P :set paste<CR>"+P:set nopaste<CR>
+vnoremap <Leader>p :set paste<CR>"+p:set nopaste<CR>
+vnoremap <Leader>P :set paste<CR>"+P:set nopaste<CR>
+
+set clipboard=unnamedplus
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -76,12 +107,7 @@ set hidden
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
-" visually select the text that was last edited
-noremap gV `[v`]
-
 inoremap <Leader><Space> <Esc>/<++><Enter>"_c4l
 vnoremap <Leader><Space> <Esc>/<++><Enter>"_c4l
-map <Leader><Space> <Esc>/<++><Enter>"_c4l
 inoremap ;gui <++>
 
-set clipboard=unnamedplus
