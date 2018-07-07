@@ -1,5 +1,5 @@
 # User specific aliases and functions
-alias ls="ls -ahFG --color=auto"
+alias ls="ls -ahFG --color=auto --group-directories-first"
 alias python='python3'
 alias ga="git add -A"
 alias gs="git status"
