@@ -97,6 +97,14 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 nnoremap Y y$
 
+" make searches always appear in centre of page
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
 " sensible line changing
 vmap j gj
 vmap k gk
