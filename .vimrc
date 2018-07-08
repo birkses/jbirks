@@ -118,6 +118,9 @@ vmap k gk
 nmap j gj
 nmap k gk
 
+" remove exmode
+nnoremap Q <Nop>
+
 set hidden
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
