@@ -13,6 +13,7 @@ Plug 'unblevable/quick-scope'
 Plug 'machakann/vim-sandwich'
 Plug 'mbbill/undotree'
 Plug 'ap/vim-buftabline'
+Plug 'vim-scripts/autocomplpop'
 call plug#end()
 
 " Let's save undo info!
