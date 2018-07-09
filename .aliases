@@ -58,3 +58,9 @@ cdp () {
   done
   OLDPWD=$TEMP_PWD
 }
+
+gpl() {
+    git add .
+    git commit -m "$*"
+    git push
+}
