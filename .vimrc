@@ -16,6 +16,9 @@ Plug 'ap/vim-buftabline'
 Plug 'vim-scripts/autocomplpop'
 call plug#end()
 
+" default macro for extending "%" operator
+runtime macros/matchit.vim
+
 " Let's save undo info!
 if !isdirectory($HOME."/.vim")
     call mkdir($HOME."/.vim", "", 0770)
