@@ -6,13 +6,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'ap/vim-buftabline'
 Plug 'dylanaraps/wal.vim'
 Plug 'ervandew/supertab'
-Plug 'tpope/vim-rsi'
-Plug 'unblevable/quick-scope'
+Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 Plug 'mbbill/undotree'
-Plug 'ap/vim-buftabline'
+Plug 'tpope/vim-rsi'
+Plug 'unblevable/quick-scope'
 Plug 'vim-scripts/autocomplpop'
 call plug#end()
 
@@ -43,6 +44,9 @@ set scrolloff=5
 
 " show current line number
 set number
+
+" hide current command input in status bar
+set noshowcmd
 
 " show relative line numbers
 set relativenumber
