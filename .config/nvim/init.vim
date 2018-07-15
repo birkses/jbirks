@@ -16,19 +16,8 @@ Plug 'mbbill/undotree'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-rsi'
 Plug 'unblevable/quick-scope'
-Plug 'valloric/youcompleteme'
+Plug 'vim-scripts/autocomplpop'
 call plug#end()
-
-" https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " default macro for extending "%" operator
 runtime macros/matchit.vim
@@ -147,10 +136,8 @@ nnoremap Q <Nop>
 
 " allow for buffers to be opened when there are unsaved changes
 set hidden
-
-inoremap <Leader><Space> <Esc>/<++><Enter>"_c4l
-vnoremap <Leader><Space> <Esc>/<++><Enter>"_c4l
-inoremap ;gui <++>
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
 
 " https://github.com/machakann/vim-sandwich/issues/62
 " textobj-sandwich query mappings break sentence text objects
