@@ -18,6 +18,8 @@ Plug 'unblevable/quick-scope'
 Plug 'valloric/youcompleteme'
 call plug#end()
 
+colorscheme wal
+
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<C-j>"
 let g:UltiSnipsJumpForwardTrigger = "<C-j>"
@@ -35,8 +37,6 @@ if !isdirectory($HOME."/.vim/undo-dir")
 endif
 set undodir=~/.vim/undo-dir
 set undofile
-
-colorscheme wal
 
 " enable auto pair fly mode
 let g:AutoPairsFlyMode = 1

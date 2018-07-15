@@ -19,6 +19,8 @@ Plug 'unblevable/quick-scope'
 Plug 'vim-scripts/autocomplpop'
 call plug#end()
 
+colorscheme wal
+
 " default macro for extending "%" operator
 runtime macros/matchit.vim
 
@@ -31,8 +33,6 @@ if !isdirectory($HOME."/.vim/undo-dir")
 endif
 set undodir=~/.vim/undo-dir
 set undofile
-
-colorscheme wal
 
 " enable auto pair fly mode
 let g:AutoPairsFlyMode = 1
