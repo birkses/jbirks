@@ -21,7 +21,7 @@
 
     myTerminal = "st"
     myWorkspaces = [ "1","2","3","4","5","6","7","8","9" ]
-    myLayout = resizeableLayout ||| Dishes 3 (1/6) ||| Grid ||| noBorders Full
+    myLayout = resizeableLayout ||| noBorders Full ||| Dishes 3 (1/6) ||| Grid
       where
         resizeableLayout = mouseResizableTile
             { draggerType = FixedDragger { gapWidth = 0, draggerWidth = 22 } }
