@@ -28,6 +28,9 @@ alias sctl='systemctl'
 alias status='systemctl -l status'
 alias stop='systemctl stop'
 
+# git dotfile migration
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 # https://xkcd.com/1168/
 extract () {
    if [ -f $1 ] ; then
