@@ -7,6 +7,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'ap/vim-buftabline'
+Plug 'davidhalter/jedi-vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
