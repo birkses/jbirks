@@ -42,3 +42,7 @@ kali ftp server
 pip install pyftpdlib
 on port 2121
 python -m pyftpdlib --username=user --password=pass -w
+
+download ssl certificate
+echo -n | openssl s_client -connect HOST:PORTNUMBER \
+    | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > /tmp/download.crt
