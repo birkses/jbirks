@@ -1248,7 +1248,7 @@ c.url.default_page = 'https://www.youtube.com/'
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://www.startpage.com/do/dsearch?query={}'}
+# c.url.searchengines = {'DEFAULT': 'https://www.startpage.com/do/dsearch?query={}'}
 
 ## The page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
