@@ -1,11 +1,17 @@
 # fix delete in st
 set enable-keypad on
-# disable arrow keys
-"\eOD":""
-"\e[D":""
-"\eOC":""
-"\e[C":""
-"\eOA":""
-"\e[A":""
-"\eOB":""
-"\e[B":""
+# Stolen inputrc
+set completion-ignore-case On
+set show-all-if-ambiguous On
+set visible-stats On
+set mark-directories On
+set bell-style none
+set editing-mode emacs
+set completion-query-items 300
+
+# perform alias expansion
+"\C-xa": alias-expand-line
+# Quote the current or previous word
+"\C-xq": "\eb\"\ef\""
+# edit the path
+"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"
